@@ -1,0 +1,35 @@
+/*!******************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[11].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[11].oneOf[12].use[3]!./src/components/scrollingText.css ***!
+  \******************************************************************************************************************************************************************************************************************************************************************************/
+.screen-wrapper {
+  width: 270px;
+  height: 16px;
+  background-color: #000000;
+  border-radius: 6px;
+  overflow: hidden;
+  position: relative;
+  border: 1px solid rgba(16, 178, 189, 0.3);
+}
+
+.scrolling-text {
+  position: absolute;
+  top: 0;
+  left: 270px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  font-family: 'Noto Sans Telugu', Arial, sans-serif;
+  font-size: 5px;
+  color: #ffffff;
+  white-space: pre;
+  animation: scroll-left 25s linear infinite;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-500px);
+  }
+} 

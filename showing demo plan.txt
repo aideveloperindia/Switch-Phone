@@ -1,0 +1,1 @@
+display the demo when a user opens the website, the demo should hover overlay on the landing page, once the user watches the demo, then he can close by clicking on close button showing X, then the landing page is visible to the user. the demo will get into a hover overlay button on the screen, the demo button hover overlay should be available in all pages.
