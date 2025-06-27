@@ -11,7 +11,7 @@ export default function Navigation() {
   const navItems = [
     { href: '/3d-demo', label: 'Prototype' },
     { href: '/how-it-works', label: 'How It Works' },
-    { href: '/audience', label: 'Audience' },
+    { href: '/why-switch-phone', label: 'Why Switch-Phone?' },
     { href: '/use-cases', label: 'Use Cases' },
     { href: '/market', label: 'Market' },
     { href: '/team', label: 'Team' },
@@ -24,8 +24,8 @@ export default function Navigation() {
         <div className="flex justify-between h-16">
           <div className="flex items-center">
             <Link href="/" className="flex-shrink-0 flex items-center">
-              <span className="text-2xl font-bold text-red-600">Switch</span>
-              <span className="text-2xl font-bold text-gray-800">-Phone</span>
+              <span className="text-2xl font-bold text-black">Switch</span>
+              <span className="text-2xl font-bold text-black">-Phone</span>
             </Link>
           </div>
 

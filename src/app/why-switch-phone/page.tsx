@@ -280,7 +280,7 @@ export default function WhySwitchPhone() {
                     className="text-2xl"
                   >
                     🚨 EMERGENCY HAPPENS
-                    {switchPhoneSteps.length === 0 && <div className="text-sm mt-2">Click to see the Switch-Phone magic...</div>}
+                                         {switchPhoneSteps.length === 0 && <div className="text-sm mt-2">Click to see the Switch-Phone magic...</div>}
                   </FlowNode>
 
                   <Arrow isVisible={switchPhoneSteps.includes(1)} />
@@ -381,7 +381,7 @@ export default function WhySwitchPhone() {
               <p className="text-2xl mb-12 text-gray-300">
                 In life-threatening situations, every second counts. 
                 <br />
-                <span className="text-yellow-400 font-bold">Switch-Phone doesn't just save time — it saves lives.</span>
+                                 <span className="text-yellow-400 font-bold">Switch-Phone doesn't just save time — it saves lives.</span>
               </p>
               
               <div className="bg-gradient-to-r from-green-600 to-blue-600 p-8 rounded-2xl">
@@ -390,7 +390,7 @@ export default function WhySwitchPhone() {
                   Join the revolution in emergency response technology
                 </p>
                 <button className="bg-white text-gray-900 px-8 py-4 rounded-xl text-xl font-bold hover:bg-gray-100 transition-colors">
-                  Get Switch-Phone Now
+                                     Get Switch-Phone Now
                 </button>
               </div>
             </div>

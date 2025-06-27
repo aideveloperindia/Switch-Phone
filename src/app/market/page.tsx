@@ -42,7 +42,7 @@ export default function Market() {
             <div className="text-center p-8 bg-green-50 rounded-xl">
               <div className="text-5xl font-bold text-green-600 mb-4">500+</div>
               <h3 className="text-xl font-bold text-gray-900 mb-2">Cities Covered</h3>
-              <p className="text-gray-600">Urban areas with Switch Phone emergency integration</p>
+                              <p className="text-gray-600">Urban areas with Switch-Phone emergency integration</p>
             </div>
             
             <div className="text-center p-8 bg-orange-50 rounded-xl">

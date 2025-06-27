@@ -53,8 +53,8 @@ export default function Hero() {
             transition={{ delay: 0.4, duration: 0.8 }}
             className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold text-gray-900 mb-8 leading-tight"
           >
-            <span className="text-electric-indigo">Switch-</span>
-            <span className="text-signal-red">Phone</span>
+            <span className="text-black">Switch-</span>
+            <span className="text-black">Phone</span>
             <br />
             <span className="text-gray-700 text-4xl sm:text-5xl lg:text-6xl xl:text-7xl">
               Emergency Response

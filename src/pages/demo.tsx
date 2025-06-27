@@ -22,18 +22,18 @@ export default function Demo() {
   return (
     <>
       <Head>
-        <title>Demo - Switch Phone</title>
-        <meta name="description" content="Switch Phone Demo Page" />
+        <title>Demo - Switch-Phone</title>
+        <meta name="description" content="Switch-Phone Demo Page" />
       </Head>
       
       <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
         <div className="max-w-6xl mx-auto px-6 py-12">
           <h1 className="text-4xl font-bold text-gray-800 mb-6 text-center">
-            Switch Phone Demo
+            Switch-Phone Demo
           </h1>
           
           <p className="text-lg text-gray-600 mb-8 text-center">
-            Welcome to the Switch Phone demonstration page. Explore our healthcare emergency device in 3D.
+            Welcome to the Switch-Phone demonstration page. Explore our healthcare emergency device in 3D.
           </p>
           
           <div className="bg-white rounded-lg shadow-lg p-8">
