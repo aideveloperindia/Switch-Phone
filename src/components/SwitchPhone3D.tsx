@@ -324,7 +324,7 @@ function SwitchPhoneDevice() {
   return (
     <group ref={phoneRef} scale={[1.8, 1.8, 1.8]}>
       <RoundedBox args={[3.25, 2.25, 0.32]} radius={0.16} smoothness={16} position={[0, 0, -0.01]}>
-        <meshStandardMaterial color="#10b2bd" metalness={0.8} roughness={0.1} />
+        <meshStandardMaterial color="#54c6ff" metalness={0.8} roughness={0.1} />
       </RoundedBox>
 
       <Text position={[0, 0.85, 0.16]} fontSize={0.1} color="#ffffff" anchorX="center" anchorY="middle">
@@ -347,7 +347,7 @@ function SwitchPhoneDevice() {
       {/* Rings and Icons with restored visuals */}
       <mesh position={[-0.75, 0.8, 0.15]} rotation={[Math.PI/2, 0, 0]}>
         <cylinderGeometry args={[0.09, 0.09, 0.05, 32]} />
-        <meshStandardMaterial color="#10b2bd" metalness={0.8} roughness={0.1} />
+        <meshStandardMaterial color="#54c6ff" metalness={0.8} roughness={0.1} />
       </mesh>
       <mesh position={[-0.75, 0.8, 0.176]}>
         <planeGeometry args={[0.18, 0.18]} />
@@ -365,7 +365,7 @@ function SwitchPhoneDevice() {
 
       <mesh position={[0.75, 0.8, 0.15]} rotation={[Math.PI/2, 0, 0]}>
         <cylinderGeometry args={[0.09, 0.09, 0.05, 32]} />
-        <meshStandardMaterial color="#10b2bd" metalness={0.8} roughness={0.1} />
+        <meshStandardMaterial color="#54c6ff" metalness={0.8} roughness={0.1} />
       </mesh>
       <mesh position={[0.75, 0.8, 0.176]}>
         <planeGeometry args={[0.18, 0.18]} />
@@ -383,7 +383,7 @@ function SwitchPhoneDevice() {
 
       <mesh position={[-1.4, 0.2, 0.15]} rotation={[Math.PI/2, 0, 0]}>
         <cylinderGeometry args={[0.09, 0.09, 0.05, 32]} />
-        <meshStandardMaterial color="#10b2bd" metalness={0.8} roughness={0.1} />
+        <meshStandardMaterial color="#54c6ff" metalness={0.8} roughness={0.1} />
       </mesh>
       <mesh position={[-1.4, 0.2, 0.176]}>
         <planeGeometry args={[0.18, 0.18]} />
@@ -396,7 +396,7 @@ function SwitchPhoneDevice() {
 
       <mesh position={[1.4, 0.2, 0.15]} rotation={[Math.PI/2, 0, 0]} onClick={handlePulseSensorClick}>
         <cylinderGeometry args={[0.12, 0.12, 0.05, 32]} />
-        <meshStandardMaterial color="#10b2bd" metalness={0.8} roughness={0.1} />
+        <meshStandardMaterial color="#54c6ff" metalness={0.8} roughness={0.1} />
       </mesh>
       <mesh position={[1.4, 0.2, 0.176]}>
         <planeGeometry args={[0.24, 0.24]} />
