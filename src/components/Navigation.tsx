@@ -9,13 +9,13 @@ export default function Navigation() {
   const pathname = usePathname()
 
   const links = [
-    { href: '/', label: 'Home' },
+    { href: '/3d-demo', label: '3D Demo' },
+    { href: '/prototypes', label: 'Prototypes' },
+    { href: '/why-switch-phone', label: 'Why Switch-Phone?' },
     { href: '/how-it-works', label: 'How it Works?' },
     { href: '/use-cases', label: 'Use Cases' },
     { href: '/market', label: 'Market' },
-    { href: '/audience', label: 'Audience' },
     { href: '/team', label: 'Team' },
-    { href: '/contact', label: 'Contact' },
   ]
 
   return (
@@ -24,8 +24,8 @@ export default function Navigation() {
         <div className="flex justify-between h-16">
           <div className="flex items-center">
             <Link href="/" className="flex-shrink-0 flex items-center">
-              <span className="text-2xl font-bold text-black">Switch</span>
-              <span className="text-2xl font-bold text-black">-Phone</span>
+              <span className="text-2xl font-bold text-black font-space-grotesk">Switch</span>
+              <span className="text-2xl font-bold text-black font-space-grotesk">-Phone</span>
             </Link>
           </div>
 

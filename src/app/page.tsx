@@ -1,5 +1,6 @@
 import React from 'react'
 import Hero from '@/components/Hero'
+import Link from 'next/link'
 
 export default function Home() {
   return (
@@ -113,12 +114,12 @@ export default function Home() {
             Join thousands of users who rely on Switch-Phone for their daily service needs.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors">
+            <Link href="/contact" className="bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors">
               Get Switch-Phone
-            </button>
-            <button className="border-2 border-gray-900 hover:bg-gray-900 hover:text-white text-gray-900 px-8 py-4 rounded-lg font-semibold text-lg transition-colors">
+            </Link>
+            <Link href="/contact" className="border-2 border-gray-900 hover:bg-gray-900 hover:text-white text-gray-900 px-8 py-4 rounded-lg font-semibold text-lg transition-colors">
               Learn More
-            </button>
+            </Link>
           </div>
         </div>
       </section>

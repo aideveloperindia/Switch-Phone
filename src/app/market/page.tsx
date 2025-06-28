@@ -1,385 +1,228 @@
+'use client'
 import React from 'react'
 
-export default function Market() {
+const Market = () => {
   return (
-    <div className="pt-16">
+    <div className="min-h-screen py-16">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-indigo-900 to-gray-900 text-white">
+      <div className="bg-gradient-to-r from-blue-900 to-indigo-900 text-white py-20">
         <div className="container mx-auto px-4">
-          <div className="text-center">
-            <h1 className="text-5xl lg:text-6xl font-bold mb-6">
-              Market Impact & Statistics
-            </h1>
-            <p className="text-xl lg:text-2xl text-gray-300 max-w-3xl mx-auto">
-              Transforming emergency response across industries and communities worldwide
-            </p>
-          </div>
+          <h1 className="text-4xl md:text-5xl font-bold text-center mb-6">
+            Market Analysis
+          </h1>
+          <p className="text-xl text-center text-blue-100 max-w-3xl mx-auto">
+            Emergency Assistive IoT for Elderly & Dependents
+          </p>
         </div>
-      </section>
+      </div>
 
-      {/* Key Statistics */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">
-              Lives Saved, Time Reduced, Impact Multiplied
-            </h2>
-          </div>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="text-center p-8 bg-red-50 rounded-xl">
-              <div className="text-5xl font-bold text-red-600 mb-4">10,000+</div>
-              <h3 className="text-xl font-bold text-gray-900 mb-2">Lives Saved</h3>
-              <p className="text-gray-600">Emergency interventions that prevented fatalities</p>
+      {/* Market Size Cards */}
+      <div className="container mx-auto px-4 py-16">
+        <div className="grid md:grid-cols-3 gap-8">
+          {/* TAM Card */}
+          <div className="bg-white rounded-xl shadow-lg p-8">
+            <div className="text-blue-600 font-bold text-lg mb-2">TAM</div>
+            <h3 className="text-2xl font-bold text-gray-900 mb-2">
+              ₹40,000 - 48,000 Cr
+            </h3>
+            <p className="text-gray-600 text-sm">USD 5-6 Billion</p>
+            <div className="mt-4 text-gray-600">
+              <p className="mb-2">Combined market segments:</p>
+              <ul className="list-disc list-inside text-sm space-y-2">
+                <li className="flex flex-col">
+                  <span>India Assistive Technology: USD 2.40B (2024)</span>
+                  <span className="text-blue-600 text-xs ml-4">
+                    Source: <a href="https://www.kenresearch.com" target="_blank" rel="noopener noreferrer">[KenResearch]</a>, 
+                    <a href="https://www.imarcgroup.com" target="_blank" rel="noopener noreferrer">[IMARC]</a>
+                  </span>
+                </li>
+                <li className="flex flex-col">
+                  <span>IoT Devices Market: USD 2.89B (2024)</span>
+                  <span className="text-blue-600 text-xs ml-4">
+                    Source: <a href="https://www.grandviewresearch.com" target="_blank" rel="noopener noreferrer">[GrandView]</a>
+                  </span>
+                </li>
+                <li className="flex flex-col">
+                  <span>IoT for Public Safety: USD 1.98B (2022)</span>
+                  <span className="text-blue-600 text-xs ml-4">
+                    Source: <a href="https://www.stratviewresearch.com" target="_blank" rel="noopener noreferrer">[Stratview]</a>, 
+                    <a href="https://www.marketsandmarkets.com" target="_blank" rel="noopener noreferrer">[M&M]</a>
+                  </span>
+                </li>
+              </ul>
             </div>
-            
-            <div className="text-center p-8 bg-blue-50 rounded-xl">
-              <div className="text-5xl font-bold text-blue-600 mb-4">60%</div>
-              <h3 className="text-xl font-bold text-gray-900 mb-2">Response Time Reduction</h3>
-              <p className="text-gray-600">Average improvement in emergency response times</p>
-            </div>
-            
-            <div className="text-center p-8 bg-green-50 rounded-xl">
-              <div className="text-5xl font-bold text-green-600 mb-4">500+</div>
-              <h3 className="text-xl font-bold text-gray-900 mb-2">Cities Covered</h3>
-                              <p className="text-gray-600">Urban areas with Switch-Phone emergency integration</p>
-            </div>
-            
-            <div className="text-center p-8 bg-orange-50 rounded-xl">
-              <div className="text-5xl font-bold text-orange-600 mb-4">99.9%</div>
-              <h3 className="text-xl font-bold text-gray-900 mb-2">System Uptime</h3>
-              <p className="text-gray-600">Reliability ensuring help is always available</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Industry Impact */}
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">
-              Industry Transformation
-            </h2>
-            <p className="text-xl text-gray-600">
-              How Switch-Phone is revolutionizing emergency response across sectors
-            </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-12">
-            <div className="space-y-8">
-              <div className="bg-white p-6 rounded-xl shadow-lg">
-                <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 bg-red-600 text-white rounded-full flex items-center justify-center mr-4">
-                    <span className="text-xl">🏥</span>
-                  </div>
-                  <h3 className="text-2xl font-bold text-gray-900">Healthcare Sector</h3>
-                </div>
-                <div className="grid md:grid-cols-2 gap-4 text-sm">
-                  <div>
-                    <div className="text-2xl font-bold text-red-600">45%</div>
-                    <p className="text-gray-600">Reduction in cardiac arrest fatalities</p>
-                  </div>
-                  <div>
-                    <div className="text-2xl font-bold text-red-600">3.2min</div>
-                    <p className="text-gray-600">Average ambulance response time</p>
-                  </div>
-                  <div>
-                    <div className="text-2xl font-bold text-red-600">2,500+</div>
-                    <p className="text-gray-600">Hospitals integrated</p>
-                  </div>
-                  <div>
-                    <div className="text-2xl font-bold text-red-600">89%</div>
-                    <p className="text-gray-600">Patient satisfaction increase</p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="bg-white p-6 rounded-xl shadow-lg">
-                <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center mr-4">
-                    <span className="text-xl">👮</span>
-                  </div>
-                  <h3 className="text-2xl font-bold text-gray-900">Law Enforcement</h3>
-                </div>
-                <div className="grid md:grid-cols-2 gap-4 text-sm">
-                  <div>
-                    <div className="text-2xl font-bold text-blue-600">78%</div>
-                    <p className="text-gray-600">Improvement in officer safety</p>
-                  </div>
-                  <div>
-                    <div className="text-2xl font-bold text-blue-600">1.8min</div>
-                    <p className="text-gray-600">Average backup response time</p>
-                  </div>
-                  <div>
-                    <div className="text-2xl font-bold text-blue-600">1,200+</div>
-                    <p className="text-gray-600">Police departments using system</p>
-                  </div>
-                  <div>
-                    <div className="text-2xl font-bold text-blue-600">92%</div>
-                    <p className="text-gray-600">Crime response effectiveness</p>
-                  </div>
-                </div>
-              </div>
+          {/* SAM Card */}
+          <div className="bg-white rounded-xl shadow-lg p-8">
+            <div className="text-green-600 font-bold text-lg mb-2">SAM</div>
+            <h3 className="text-2xl font-bold text-gray-900 mb-2">
+              ₹5,800 Cr
+            </h3>
+            <p className="text-gray-600 text-sm">USD 716 Million</p>
+            <div className="mt-4 text-gray-600">
+              <p className="mb-2">India Disabled & Elderly Assistive Devices Market (2023)</p>
+              <p className="text-sm">Projected to reach USD 2.77B by 2030</p>
+              <p className="text-blue-600 text-xs mt-2">
+                Sources: <a href="https://www.wiseguyreports.com" target="_blank" rel="noopener noreferrer">[WiseGuy]</a>, 
+                <a href="https://www.grandviewresearch.com" target="_blank" rel="noopener noreferrer">[GrandView]</a>, 
+                <a href="https://www.kenresearch.com" target="_blank" rel="noopener noreferrer">[KenResearch]</a>
+              </p>
             </div>
+          </div>
 
-            <div className="space-y-8">
-              <div className="bg-white p-6 rounded-xl shadow-lg">
-                <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 bg-green-600 text-white rounded-full flex items-center justify-center mr-4">
-                    <span className="text-xl">⚓</span>
-                  </div>
-                  <h3 className="text-2xl font-bold text-gray-900">Maritime Safety</h3>
-                </div>
-                <div className="grid md:grid-cols-2 gap-4 text-sm">
-                  <div>
-                    <div className="text-2xl font-bold text-green-600">67%</div>
-                    <p className="text-gray-600">Reduction in maritime fatalities</p>
-                  </div>
-                  <div>
-                    <div className="text-2xl font-bold text-green-600">15min</div>
-                    <p className="text-gray-600">Average rescue response time</p>
-                  </div>
-                  <div>
-                    <div className="text-2xl font-bold text-green-600">850+</div>
-                    <p className="text-gray-600">Vessels equipped with system</p>
-                  </div>
-                  <div>
-                    <div className="text-2xl font-bold text-green-600">96%</div>
-                    <p className="text-gray-600">Successful water rescues</p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="bg-white p-6 rounded-xl shadow-lg">
-                <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 bg-orange-600 text-white rounded-full flex items-center justify-center mr-4">
-                    <span className="text-xl">🏭</span>
-                  </div>
-                  <h3 className="text-2xl font-bold text-gray-900">Industrial Safety</h3>
-                </div>
-                <div className="grid md:grid-cols-2 gap-4 text-sm">
-                  <div>
-                    <div className="text-2xl font-bold text-orange-600">82%</div>
-                    <p className="text-gray-600">Reduction in workplace accidents</p>
-                  </div>
-                  <div>
-                    <div className="text-2xl font-bold text-orange-600">4.5min</div>
-                    <p className="text-gray-600">Emergency response time</p>
-                  </div>
-                  <div>
-                    <div className="text-2xl font-bold text-orange-600">300+</div>
-                    <p className="text-gray-600">Industrial facilities protected</p>
-                  </div>
-                  <div>
-                    <div className="text-2xl font-bold text-orange-600">94%</div>
-                    <p className="text-gray-600">Compliance improvement</p>
-                  </div>
-                </div>
-              </div>
+          {/* SOM Card */}
+          <div className="bg-white rounded-xl shadow-lg p-8">
+            <div className="text-orange-600 font-bold text-lg mb-2">SOM</div>
+            <h3 className="text-2xl font-bold text-gray-900 mb-2">
+              ₹50 - 200 Cr
+            </h3>
+            <p className="text-gray-600 text-sm">USD 6-24 Million</p>
+            <div className="mt-4 text-gray-600">
+              <p className="mb-2">Go-to-Market Plan:</p>
+              <ul className="list-disc list-inside text-sm space-y-1">
+                <li>Pilot: 50,000 units @ ₹10,000 each</li>
+                <li>Scale (3-5 years): 200,000 units</li>
+              </ul>
             </div>
           </div>
         </div>
-      </section>
+      </div>
 
-      {/* Global Coverage */}
-      <section className="py-20 bg-white">
+      {/* Market Growth Section */}
+      <div className="bg-gray-50 py-16">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">
-              Global Coverage Areas
-            </h2>
-            <p className="text-xl text-gray-600">
-              Switch-Phone emergency response network spans across continents
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="text-center p-6 bg-blue-50 rounded-xl">
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">North America</h3>
-              <div className="space-y-2 text-gray-600">
-                <div className="flex justify-between">
-                  <span>United States</span>
-                  <span className="font-semibold">245 cities</span>
-                </div>
-                <div className="flex justify-between">
-                  <span>Canada</span>
-                  <span className="font-semibold">89 cities</span>
-                </div>
-                <div className="flex justify-between">
-                  <span>Mexico</span>
-                  <span className="font-semibold">34 cities</span>
-                </div>
-              </div>
+          <h2 className="text-3xl font-bold text-center mb-12">Market Growth & Opportunities</h2>
+          <div className="grid md:grid-cols-2 gap-12">
+            <div className="bg-white rounded-xl shadow-lg p-8">
+              <h3 className="text-2xl font-bold text-gray-900 mb-6">Market Projections</h3>
+              <ul className="space-y-4">
+                <li className="flex flex-col">
+                  <div className="flex items-start">
+                    <span className="text-blue-600 text-xl mr-3">→</span>
+                    <div>
+                      <p className="font-semibold">Assistive Technology Market</p>
+                      <p className="text-gray-600">USD 2.40B (2024) → USD 3.50B (2033)</p>
+                    </div>
+                  </div>
+                  <span className="text-blue-600 text-xs ml-8 mt-1">
+                    Source: <a href="https://www.imarcgroup.com" target="_blank" rel="noopener noreferrer">[IMARC]</a>
+                  </span>
+                </li>
+                <li className="flex flex-col">
+                  <div className="flex items-start">
+                    <span className="text-blue-600 text-xl mr-3">→</span>
+                    <div>
+                      <p className="font-semibold">IoT Devices Market</p>
+                      <p className="text-gray-600">USD 2.89B (2024) → USD 10.28B (2030)</p>
+                    </div>
+                  </div>
+                  <span className="text-blue-600 text-xs ml-8 mt-1">
+                    Sources: <a href="https://www.alliedmarketresearch.com" target="_blank" rel="noopener noreferrer">[Allied]</a>, 
+                    <a href="https://www.grandviewresearch.com" target="_blank" rel="noopener noreferrer">[GrandView]</a>
+                  </span>
+                </li>
+                <li className="flex flex-col">
+                  <div className="flex items-start">
+                    <span className="text-blue-600 text-xl mr-3">→</span>
+                    <div>
+                      <p className="font-semibold">IoT for Public Safety</p>
+                      <p className="text-gray-600">USD 1.98B (2022) → USD 4.56B (2029)</p>
+                    </div>
+                  </div>
+                  <span className="text-blue-600 text-xs ml-8 mt-1">
+                    Source: <a href="https://www.stratviewresearch.com" target="_blank" rel="noopener noreferrer">[Stratview]</a>
+                  </span>
+                </li>
+              </ul>
             </div>
 
-            <div className="text-center p-6 bg-green-50 rounded-xl">
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">Europe</h3>
-              <div className="space-y-2 text-gray-600">
-                <div className="flex justify-between">
-                  <span>United Kingdom</span>
-                  <span className="font-semibold">67 cities</span>
-                </div>
-                <div className="flex justify-between">
-                  <span>Germany</span>
-                  <span className="font-semibold">45 cities</span>
-                </div>
-                <div className="flex justify-between">
-                  <span>France</span>
-                  <span className="font-semibold">38 cities</span>
-                </div>
-              </div>
-            </div>
-
-            <div className="text-center p-6 bg-orange-50 rounded-xl">
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">Asia Pacific</h3>
-              <div className="space-y-2 text-gray-600">
-                <div className="flex justify-between">
-                  <span>Japan</span>
-                  <span className="font-semibold">56 cities</span>
-                </div>
-                <div className="flex justify-between">
-                  <span>Australia</span>
-                  <span className="font-semibold">23 cities</span>
-                </div>
-                <div className="flex justify-between">
-                  <span>Singapore</span>
-                  <span className="font-semibold">Full coverage</span>
-                </div>
-              </div>
+            <div className="bg-white rounded-xl shadow-lg p-8">
+              <h3 className="text-2xl font-bold text-gray-900 mb-6">Key Growth Drivers</h3>
+              <ul className="space-y-4">
+                <li className="flex items-start">
+                  <span className="text-green-600 text-xl mr-3">✓</span>
+                  <div>
+                    <p className="font-semibold">Elderly Demographics</p>
+                    <p className="text-gray-600">Growing elderly population in India requiring assistive care</p>
+                  </div>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-green-600 text-xl mr-3">✓</span>
+                  <div>
+                    <p className="font-semibold">Rising Safety Concerns</p>
+                    <p className="text-gray-600">Increased focus on elderly safety and emergency response</p>
+                  </div>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-green-600 text-xl mr-3">✓</span>
+                  <div>
+                    <p className="font-semibold">Smart Home Adoption</p>
+                    <p className="text-gray-600">Growing acceptance of IoT devices in Indian households</p>
+                  </div>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-green-600 text-xl mr-3">✓</span>
+                  <div>
+                    <p className="font-semibold">Market Growth Rate</p>
+                    <p className="text-gray-600">IoT and assistive tech growing at 20%+ CAGR</p>
+                    <p className="text-blue-600 text-xs mt-1">
+                      Sources: <a href="https://www.techsciresearch.com" target="_blank" rel="noopener noreferrer">[TechSci]</a>, 
+                      <a href="https://www.nextmsc.com" target="_blank" rel="noopener noreferrer">[NextMSC]</a>
+                    </p>
+                  </div>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
-      </section>
+      </div>
 
-      {/* Economic Impact */}
-      <section className="py-20 bg-gray-900 text-white">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-6">
-              Economic Impact
-            </h2>
-            <p className="text-xl text-gray-300">
-              Quantifying the value of faster emergency response
-            </p>
-          </div>
+      {/* Sources Section */}
+      <div className="container mx-auto px-4 py-16">
+        <h2 className="text-3xl font-bold text-center mb-12">Market Research Sources</h2>
+        <div className="bg-white rounded-xl shadow-lg p-8">
+          <div className="space-y-6">
+            <div>
+              <h3 className="text-xl font-bold text-gray-900 mb-4">India Disabled & Elderly Assistive Device Market</h3>
+              <ul className="list-disc list-inside space-y-2 text-blue-600">
+                <li><a href="https://www.nextmsc.com" target="_blank" rel="noopener noreferrer">NextMSC</a></li>
+                <li><a href="https://www.imarcgroup.com" target="_blank" rel="noopener noreferrer">IMARC Group</a></li>
+                <li><a href="https://www.wiseguyreports.com" target="_blank" rel="noopener noreferrer">Wise Guy Reports</a></li>
+              </ul>
+            </div>
+            
+            <div>
+              <h3 className="text-xl font-bold text-gray-900 mb-4">India Assistive Technology Market</h3>
+              <ul className="list-disc list-inside space-y-2 text-blue-600">
+                <li><a href="https://www.kenresearch.com" target="_blank" rel="noopener noreferrer">Ken Research</a></li>
+                <li><a href="https://www.imarcgroup.com" target="_blank" rel="noopener noreferrer">IMARC Group</a></li>
+                <li><a href="https://www.researchandmarkets.com" target="_blank" rel="noopener noreferrer">Research and Markets</a></li>
+              </ul>
+            </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
-            <div className="p-6">
-              <div className="text-4xl font-bold text-green-400 mb-2">$2.3B</div>
-              <h3 className="text-lg font-semibold mb-2">Healthcare Savings</h3>
-              <p className="text-gray-300 text-sm">Reduced medical costs through faster intervention</p>
+            <div>
+              <h3 className="text-xl font-bold text-gray-900 mb-4">India IoT Market</h3>
+              <ul className="list-disc list-inside space-y-2 text-blue-600">
+                <li><a href="https://www.grandviewresearch.com" target="_blank" rel="noopener noreferrer">Grand View Research</a></li>
+                <li><a href="https://www.alliedmarketresearch.com" target="_blank" rel="noopener noreferrer">Allied Market Research</a></li>
+                <li><a href="https://www.techsciresearch.com" target="_blank" rel="noopener noreferrer">TechSci Research</a></li>
+              </ul>
             </div>
-            
-            <div className="p-6">
-              <div className="text-4xl font-bold text-blue-400 mb-2">$890M</div>
-              <h3 className="text-lg font-semibold mb-2">Insurance Claims Prevented</h3>
-              <p className="text-gray-300 text-sm">Accidents and incidents avoided</p>
-            </div>
-            
-            <div className="p-6">
-              <div className="text-4xl font-bold text-orange-400 mb-2">$1.2B</div>
-              <h3 className="text-lg font-semibold mb-2">Productivity Gains</h3>
-              <p className="text-gray-300 text-sm">Reduced downtime and faster recovery</p>
-            </div>
-            
-            <div className="p-6">
-              <div className="text-4xl font-bold text-red-400 mb-2">$450M</div>
-              <h3 className="text-lg font-semibold mb-2">Legal Cost Reduction</h3>
-              <p className="text-gray-300 text-sm">Liability and litigation savings</p>
+
+            <div>
+              <h3 className="text-xl font-bold text-gray-900 mb-4">India IoT for Public Safety</h3>
+              <ul className="list-disc list-inside space-y-2 text-blue-600">
+                <li><a href="https://www.stratviewresearch.com" target="_blank" rel="noopener noreferrer">Stratview Research</a></li>
+                <li><a href="https://www.marketresearchfuture.com" target="_blank" rel="noopener noreferrer">Market Research Future</a></li>
+                <li><a href="https://www.marketsandmarkets.com" target="_blank" rel="noopener noreferrer">Markets and Markets</a></li>
+              </ul>
             </div>
           </div>
         </div>
-      </section>
-
-      {/* Future Projections */}
-      <section className="py-20 bg-indigo-50">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">
-              Future Growth Projections
-            </h2>
-            <p className="text-xl text-gray-600">
-              Expanding emergency response capabilities worldwide
-            </p>
-          </div>
-
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-8">
-              <div className="bg-white p-6 rounded-xl shadow-lg">
-                <h3 className="text-xl font-bold text-gray-900 mb-4">2024 Goals</h3>
-                <ul className="space-y-3 text-gray-600">
-                  <li className="flex items-center">
-                    <div className="w-2 h-2 bg-green-500 rounded-full mr-3"></div>
-                    1,000 cities with full Switch-Phone integration
-                  </li>
-                  <li className="flex items-center">
-                    <div className="w-2 h-2 bg-green-500 rounded-full mr-3"></div>
-                    50% reduction in average emergency response times
-                  </li>
-                  <li className="flex items-center">
-                    <div className="w-2 h-2 bg-green-500 rounded-full mr-3"></div>
-                    Integration with 5,000+ healthcare facilities
-                  </li>
-                </ul>
-              </div>
-
-              <div className="bg-white p-6 rounded-xl shadow-lg">
-                <h3 className="text-xl font-bold text-gray-900 mb-4">2025 Vision</h3>
-                <ul className="space-y-3 text-gray-600">
-                  <li className="flex items-center">
-                    <div className="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
-                    AI-powered predictive emergency response
-                  </li>
-                  <li className="flex items-center">
-                    <div className="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
-                    Satellite emergency communication backup
-                  </li>
-                  <li className="flex items-center">
-                    <div className="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
-                    Global emergency response standardization
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            <div className="bg-white p-8 rounded-2xl shadow-lg">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">Market Expansion</h3>
-              <div className="space-y-6">
-                <div>
-                  <div className="flex justify-between items-center mb-2">
-                    <span className="text-gray-700">Current Market Penetration</span>
-                    <span className="font-bold text-gray-900">23%</span>
-                  </div>
-                  <div className="w-full bg-gray-200 rounded-full h-2">
-                    <div className="bg-blue-600 h-2 rounded-full" style={{width: '23%'}}></div>
-                  </div>
-                </div>
-
-                <div>
-                  <div className="flex justify-between items-center mb-2">
-                    <span className="text-gray-700">2024 Target</span>
-                    <span className="font-bold text-gray-900">45%</span>
-                  </div>
-                  <div className="w-full bg-gray-200 rounded-full h-2">
-                    <div className="bg-green-600 h-2 rounded-full" style={{width: '45%'}}></div>
-                  </div>
-                </div>
-
-                <div>
-                  <div className="flex justify-between items-center mb-2">
-                    <span className="text-gray-700">2025 Projection</span>
-                    <span className="font-bold text-gray-900">67%</span>
-                  </div>
-                  <div className="w-full bg-gray-200 rounded-full h-2">
-                    <div className="bg-orange-600 h-2 rounded-full" style={{width: '67%'}}></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      </div>
     </div>
   )
-} 
+}
+
+export default Market 

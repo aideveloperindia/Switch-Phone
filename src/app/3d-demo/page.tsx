@@ -19,12 +19,9 @@ const SwitchPhoneModel = dynamic(() => import('@/components/SwitchPhone3D'), {
 
 export default function ThreeDemoPage() {
   return (
-    <div className="relative w-full h-screen overflow-hidden bg-white">
-      {/* Top Space - Available for your content */}
-      <div className="h-16 w-full"></div>
-      
-      {/* 3D Model Container - Moved downwards */}
-      <div className="relative w-full" style={{ height: 'calc(100vh - 4rem)' }}>
+    <div className="relative w-full h-screen overflow-hidden bg-white pt-12">
+      {/* 3D Model Container */}
+      <div className="relative w-full h-[calc(100vh-3rem)]">
         <SwitchPhoneModel />
       </div>
       

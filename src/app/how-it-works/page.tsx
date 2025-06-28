@@ -261,7 +261,7 @@ export default function HowItWorks() {
             <div className="lg:w-1/2">
               <div className="w-full h-[600px] relative overflow-hidden">
                 <Image
-                  src="/visual representations/6.Camera .gif"
+                  src="/visual representations/6.Camera.gif"
                   alt="Camera Functionality"
                   fill
                   style={{ objectFit: 'contain' }}
