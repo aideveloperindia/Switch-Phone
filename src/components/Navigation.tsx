@@ -10,7 +10,7 @@ export default function Navigation() {
 
   const navItems = [
     { href: '/3d-demo', label: 'Prototype' },
-    { href: '/how-it-works', label: 'How It Works' },
+    { href: '/how-it-works', label: 'How it Works?' },
     { href: '/why-switch-phone', label: 'Why Switch-Phone?' },
     { href: '/use-cases', label: 'Use Cases' },
     { href: '/market', label: 'Market' },
