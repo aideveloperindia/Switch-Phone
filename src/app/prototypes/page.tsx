@@ -15,7 +15,7 @@ export default function PrototypesPage() {
         <div className="max-w-4xl mx-auto px-4">
           <div className="relative w-full h-[500px]">
             <Image
-              src="/prototypes/1st prototype.png"
+              src={`/prototypes/1st%20prototype.png`}
               alt="First Switch Phone Prototype"
               fill
               style={{ objectFit: 'contain' }}
@@ -35,7 +35,7 @@ export default function PrototypesPage() {
         <div className="max-w-4xl mx-auto px-4">
           <div className="relative w-full h-[500px]">
             <Image
-              src="/prototypes/3d printed prototype.png"
+              src={`/prototypes/3d%20printed%20prototype.png`}
               alt="3D Printed Switch Phone Prototype"
               fill
               style={{ objectFit: 'contain' }}

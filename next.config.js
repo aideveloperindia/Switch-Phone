@@ -2,19 +2,20 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    remotePatterns: [
-      {
-        protocol: 'http',
-        hostname: 'localhost',
-      }
-    ],
+    domains: ['localhost', 'switch-phone.in', 'www.switch-phone.in'],
     dangerouslyAllowSVG: true,
     contentDispositionType: 'attachment',
     formats: ['image/webp', 'image/avif'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: '**.switch-phone.in',
+      },
+    ],
   },
   webpack(config) {
     config.module.rules.push({
-      test: /\.(gif|mp4)$/i,
+      test: /\.(gif|mp4|png|jpe?g|svg|jfif)$/i,
       use: [
         {
           loader: 'file-loader',

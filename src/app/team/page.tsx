@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react'
 import Image from 'next/image'
 
@@ -26,10 +28,12 @@ export default function Team() {
             <div className="text-center bg-gradient-to-br from-blue-50 to-indigo-50 p-8 rounded-xl shadow-lg">
               <div className="w-32 h-32 mx-auto mb-6 relative rounded-full overflow-hidden">
                 <Image
-                  src="/team/aditya.jfif"
+                  src="/team/aditya.jpg"
                   alt="Nandagiri Aditya"
-                  fill
-                  className="object-cover"
+                  width={128}
+                  height={128}
+                  className="object-cover rounded-full"
+                  priority
                 />
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-2">Nandagiri Aditya</h3>
@@ -45,10 +49,12 @@ export default function Team() {
             <div className="text-center bg-gradient-to-br from-emerald-50 to-blue-50 p-8 rounded-xl shadow-lg">
               <div className="w-32 h-32 mx-auto mb-6 relative rounded-full overflow-hidden">
                 <Image
-                  src="/team/hari.jfif"
+                  src="/team/hari.jpg"
                   alt="Mr. Harivendrana Chary"
-                  fill
-                  className="object-cover"
+                  width={128}
+                  height={128}
+                  className="object-cover rounded-full"
+                  priority
                 />
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-2">Mr. Harivendrana Chary</h3>
@@ -79,10 +85,12 @@ export default function Team() {
             <div className="text-center bg-gradient-to-br from-cyan-50 to-blue-50 p-8 rounded-xl shadow-lg">
               <div className="w-32 h-32 mx-auto mb-6 relative rounded-full overflow-hidden">
                 <Image
-                  src="/team/kethanve.jfif"
+                  src="/team/kethanve.jpg"
                   alt="Dr. Ch. Kethanve"
-                  fill
-                  className="object-cover"
+                  width={128}
+                  height={128}
+                  className="object-cover rounded-full"
+                  priority
                 />
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-2">Dr. Ch. Kethanve</h3>
@@ -100,8 +108,10 @@ export default function Team() {
                 <Image
                   src="/team/dinesh.jpg"
                   alt="Dr. S. Dinesh"
-                  fill
-                  className="object-cover"
+                  width={128}
+                  height={128}
+                  className="object-cover rounded-full"
+                  priority
                 />
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-2">Dr. S. Dinesh</h3>
