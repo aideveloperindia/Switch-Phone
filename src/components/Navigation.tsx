@@ -8,14 +8,14 @@ export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
   const pathname = usePathname()
 
-  const navItems = [
-    { href: '/3d-demo', label: 'Prototype' },
+  const links = [
+    { href: '/', label: 'Home' },
     { href: '/how-it-works', label: 'How it Works?' },
-    { href: '/why-switch-phone', label: 'Why Switch-Phone?' },
     { href: '/use-cases', label: 'Use Cases' },
     { href: '/market', label: 'Market' },
+    { href: '/audience', label: 'Audience' },
     { href: '/team', label: 'Team' },
-    { href: '/admin-dashboard', label: 'Admin Dashboard' },
+    { href: '/contact', label: 'Contact' },
   ]
 
   return (
@@ -31,7 +31,7 @@ export default function Navigation() {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            {navItems.map((item) => (
+            {links.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
@@ -67,7 +67,7 @@ export default function Navigation() {
         {isOpen && (
           <div className="md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t">
-              {navItems.map((item) => (
+              {links.map((item) => (
                 <Link
                   key={item.href}
                   href={item.href}

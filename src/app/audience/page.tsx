@@ -59,7 +59,7 @@ const Arrow = ({ isVisible, delay = 0 }: { isVisible: boolean, delay?: number })
   </div>
 )
 
-export default function WhySwitchPhone() {
+export default function AudiencePage() {
   const [selectedFlow, setSelectedFlow] = useState<'traditional' | 'switchphone' | null>(null)
   const [traditionalSteps, setTraditionalSteps] = useState<number[]>([])
   const [switchPhoneSteps, setSwitchPhoneSteps] = useState<number[]>([])
