@@ -173,7 +173,7 @@ export default function HowItWorks() {
             </div>
             <div className="lg:w-1/2">
               <div className="w-full h-[400px] md:h-[600px] relative bg-gray-100 rounded-lg overflow-hidden">
-                {/* Desktop GIF */}
+                {/* GIF for both mobile and desktop */}
                 <Image
                   src="/visual representations/1.Installation.gif"
                   alt="Installation Process"
@@ -182,25 +182,9 @@ export default function HowItWorks() {
                   priority={false}
                   unoptimized
                   sizes="(max-width: 768px) 100vw, 50vw"
-                  className="object-contain hidden md:block"
+                  className="object-contain"
                   loading="lazy"
                 />
-                
-                {/* Mobile fallback - Simple visual representation */}
-                <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-blue-50 to-blue-100 md:hidden">
-                  <div className="text-center p-6">
-                    <div className="w-20 h-20 bg-blue-500 rounded-lg flex items-center justify-center mx-auto mb-4 shadow-lg">
-                      <span className="text-3xl text-white">🔧</span>
-                    </div>
-                    <h4 className="text-lg font-semibold text-blue-800 mb-2">Installation</h4>
-                    <p className="text-sm text-blue-600">Wall mounting process</p>
-                    <div className="mt-3 flex justify-center space-x-1">
-                      <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></div>
-                      <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse delay-100"></div>
-                      <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse delay-200"></div>
-                    </div>
-                  </div>
-                </div>
                 
                 {/* 3D Model only on desktop */}
                 <div className="hidden md:block">
@@ -225,7 +209,7 @@ export default function HowItWorks() {
             </div>
             <div className="lg:w-1/2">
               <div className="w-full h-[400px] md:h-[600px] relative overflow-hidden bg-gray-100 rounded-lg">
-                {/* Desktop GIF */}
+                {/* GIF for both mobile and desktop */}
                 <Image
                   src="/visual representations/2.family number.gif"
                   alt="Family Number Setup"
@@ -234,25 +218,9 @@ export default function HowItWorks() {
                   priority={false}
                   unoptimized
                   sizes="(max-width: 768px) 100vw, 50vw"
-                  className="object-contain hidden md:block"
+                  className="object-contain"
                   loading="lazy"
                 />
-                
-                {/* Mobile fallback */}
-                <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-green-50 to-green-100 md:hidden">
-                  <div className="text-center p-6">
-                    <div className="w-20 h-20 bg-green-500 rounded-lg flex items-center justify-center mx-auto mb-4 shadow-lg">
-                      <span className="text-3xl text-white">👨‍👩‍👧‍👦</span>
-                    </div>
-                    <h4 className="text-lg font-semibold text-green-800 mb-2">Family Setup</h4>
-                    <p className="text-sm text-green-600">Register family contacts</p>
-                    <div className="mt-3 flex justify-center space-x-1">
-                      <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-                      <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse delay-100"></div>
-                      <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse delay-200"></div>
-                    </div>
-                  </div>
-                </div>
                 
                 {/* 3D Model only on desktop */}
                 <div className="relative hidden md:block">
@@ -413,25 +381,10 @@ export default function HowItWorks() {
                   priority={false}
                   unoptimized
                   sizes="(max-width: 768px) 100vw, 50vw"
-                  className="object-contain hidden md:block"
+                  className="object-contain"
                   loading="lazy"
                 />
                 
-                {/* Mobile fallback */}
-                <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-indigo-50 to-indigo-100 md:hidden">
-                  <div className="text-center p-6">
-                    <div className="w-20 h-20 bg-indigo-500 rounded-lg flex items-center justify-center mx-auto mb-4 shadow-lg">
-                      <span className="text-3xl text-white">📊</span>
-                    </div>
-                    <h4 className="text-lg font-semibold text-indigo-800 mb-2">Sensor</h4>
-                    <p className="text-sm text-indigo-600">Pulse monitoring system</p>
-                    <div className="mt-3 flex justify-center space-x-1">
-                      <div className="w-2 h-2 bg-indigo-400 rounded-full animate-pulse"></div>
-                      <div className="w-2 h-2 bg-indigo-400 rounded-full animate-pulse delay-100"></div>
-                      <div className="w-2 h-2 bg-indigo-400 rounded-full animate-pulse delay-200"></div>
-                    </div>
-                  </div>
-                </div>                
                 {/* 3D Model only on desktop */}
                 <div className="relative hidden md:block">
                   <Model3DOverlay />
@@ -455,7 +408,7 @@ export default function HowItWorks() {
             </div>
             <div className="lg:w-1/2">
               <div className="w-full h-[400px] md:h-[600px] relative overflow-hidden bg-gray-100 rounded-lg">
-                {/* Desktop GIF */}
+                {/* GIF for both mobile and desktop */}
                 <Image
                   src="/visual representations/8.Dashboard.gif"
                   alt="Dashboard Communication"
@@ -464,25 +417,9 @@ export default function HowItWorks() {
                   priority={false}
                   unoptimized
                   sizes="(max-width: 768px) 100vw, 50vw"
-                  className="object-contain hidden md:block"
+                  className="object-contain"
                   loading="lazy"
                 />
-                
-                {/* Mobile fallback */}
-                <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-teal-50 to-teal-100 md:hidden">
-                  <div className="text-center p-6">
-                    <div className="w-20 h-20 bg-teal-500 rounded-lg flex items-center justify-center mx-auto mb-4 shadow-lg">
-                      <span className="text-3xl text-white">📊</span>
-                    </div>
-                    <h4 className="text-lg font-semibold text-teal-800 mb-2">Dashboard</h4>
-                    <p className="text-sm text-teal-600">Cloud monitoring system</p>
-                    <div className="mt-3 flex justify-center space-x-1">
-                      <div className="w-2 h-2 bg-teal-400 rounded-full animate-pulse"></div>
-                      <div className="w-2 h-2 bg-teal-400 rounded-full animate-pulse delay-100"></div>
-                      <div className="w-2 h-2 bg-teal-400 rounded-full animate-pulse delay-200"></div>
-                    </div>
-                  </div>
-                </div>
                 
                 {/* 3D Model only on desktop */}
                 <div className="relative hidden md:block">
@@ -536,7 +473,7 @@ export default function HowItWorks() {
             </div>
             <div className="lg:w-1/2">
               <div className="w-full h-[400px] md:h-[600px] relative overflow-hidden bg-gray-100 rounded-lg">
-                {/* Desktop GIF */}
+                {/* GIF for both mobile and desktop */}
                 <Image
                   src="/visual representations/9.RF SWITCHES.gif"
                   alt="Room-Based Alert Switches"
@@ -545,25 +482,9 @@ export default function HowItWorks() {
                   priority={false}
                   unoptimized
                   sizes="(max-width: 768px) 100vw, 50vw"
-                  className="object-contain hidden md:block"
+                  className="object-contain"
                   loading="lazy"
                 />
-                
-                {/* Mobile fallback */}
-                <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-orange-50 to-orange-100 md:hidden">
-                  <div className="text-center p-6">
-                    <div className="w-20 h-20 bg-orange-500 rounded-lg flex items-center justify-center mx-auto mb-4 shadow-lg">
-                      <span className="text-3xl text-white">📡</span>
-                    </div>
-                    <h4 className="text-lg font-semibold text-orange-800 mb-2">RF Switches</h4>
-                    <p className="text-sm text-orange-600">Room-based emergency alerts</p>
-                    <div className="mt-3 flex justify-center space-x-1">
-                      <div className="w-2 h-2 bg-orange-400 rounded-full animate-pulse"></div>
-                      <div className="w-2 h-2 bg-orange-400 rounded-full animate-pulse delay-100"></div>
-                      <div className="w-2 h-2 bg-orange-400 rounded-full animate-pulse delay-200"></div>
-                    </div>
-                  </div>
-                </div>
                 
                 {/* 3D Model only on desktop */}
                 <div className="relative hidden md:block">
