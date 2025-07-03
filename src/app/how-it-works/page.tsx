@@ -189,7 +189,7 @@ export default function HowItWorks() {
                 {/* 3D Model only on desktop */}
                 <div className="hidden md:block">
                   <InstallationModel3DOverlay />
-              </div>
+                </div>
               </div>
             </div>
           </div>
@@ -225,7 +225,7 @@ export default function HowItWorks() {
                 {/* 3D Model only on desktop */}
                 <div className="relative hidden md:block">
                   <Model3DOverlay />
-              </div>
+                </div>
               </div>
             </div>
           </div>
