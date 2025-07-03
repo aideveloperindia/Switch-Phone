@@ -354,7 +354,7 @@ function SwitchPhoneDevice() {
         <meshBasicMaterial map={speakerTexture} transparent />
       </mesh>
       <mesh position={[-0.75, 0.87, 0.151]}>
-        <ringGeometry args={[0.11, 0.13, 16, 1, 0, Math.PI]} />
+        <torusGeometry args={[0.12, 0.02, 16, 32, Math.PI]} />
         <meshStandardMaterial 
           color={emergencyFlash ? "#FF0000" : speakingAnimation ? "#00FF00" : "#87CEEB"}
           metalness={0.8} roughness={0.1}
@@ -372,7 +372,7 @@ function SwitchPhoneDevice() {
         <meshBasicMaterial map={cameraTexture} transparent />
       </mesh>
       <mesh position={[0.75, 0.84, 0.151]} rotation={[0, 0, 0]}>
-        <ringGeometry args={[0.11, 0.13, 16, 1, 0, Math.PI]} />
+        <torusGeometry args={[0.12, 0.02, 16, 32, Math.PI]} />
         <meshStandardMaterial 
           color={emergencyFlash ? "#FF0000" : activeService === 'family' ? "#00FF00" : "#87CEEB"}
           metalness={0.8} roughness={0.1}
@@ -390,7 +390,7 @@ function SwitchPhoneDevice() {
         <meshBasicMaterial map={microphoneTexture} transparent />
       </mesh>
       <mesh position={[-1.4, 0.2, 0.151]} rotation={[0, 0, -Math.PI/2]}>
-        <ringGeometry args={[0.11, 0.13, 16, 1, 0, Math.PI]} />
+        <torusGeometry args={[0.12, 0.02, 16, 32, Math.PI]} />
         <meshStandardMaterial color={"#87CEEB"} metalness={0.8} roughness={0.1} />
       </mesh>
 
@@ -403,7 +403,7 @@ function SwitchPhoneDevice() {
         <meshBasicMaterial map={sensorTexture} transparent />
       </mesh>
       <mesh position={[1.4, 0.2, 0.151]} rotation={[0, 0, Math.PI/2]}>
-        <ringGeometry args={[0.14, 0.16, 16, 1, 0, Math.PI]} />
+        <torusGeometry args={[0.14, 0.02, 16, 32, Math.PI]} />
         <meshStandardMaterial 
           color={pulseSensorClicked ? "#FF0080" : "#87CEEB"}
           metalness={0.8} roughness={0.1}
@@ -417,15 +417,15 @@ function SwitchPhoneDevice() {
 
 export default function SwitchPhoneModel() {
   return (
-    <div className="w-full h-screen bg-white">
-      <Canvas
-        camera={{ position: [0, 0, 6], fov: 50 }}
-        shadows
-        dpr={[1, 2]}
-        style={{ width: '100%', height: '100vh' }}
-        gl={{ antialias: true, alpha: false, toneMappingExposure: 0.8 }}
-        scene={{ background: new THREE.Color(0xffffff) }}
-      >
+    <Canvas
+      camera={{ position: [0, 0, 6], fov: 50 }}
+      shadows
+      dpr={[1, 2]}
+      style={{ width: '800px', height: '800px' }}
+      className="md:!w-full md:!h-full"
+      gl={{ antialias: true, alpha: false, toneMappingExposure: 0.8 }}
+      scene={{ background: new THREE.Color(0xffffff) }}
+    >
         <ambientLight intensity={1.2} color="#ffffff" />
         <directionalLight 
           position={[5, 8, 5]} 
@@ -457,16 +457,13 @@ export default function SwitchPhoneModel() {
         />
         <SwitchPhoneDevice />
         <OrbitControls 
-          enableZoom={true}
-          maxDistance={10}
-          minDistance={3}
+          enableZoom={false}
           enablePan={false}
           enableRotate={true}
           autoRotate={false}
           maxPolarAngle={Math.PI / 2.2}
           minPolarAngle={Math.PI / 4}
         />
-      </Canvas>
-    </div>
+    </Canvas>
   );
 }

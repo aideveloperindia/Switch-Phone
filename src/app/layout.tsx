@@ -3,6 +3,7 @@ import { Inter, Space_Grotesk } from 'next/font/google'
 import './globals.css'
 import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
+import ClientLayout from '@/components/ClientLayout'
 
 const inter = Inter({ 
   subsets: ['latin'],
@@ -29,11 +30,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.variable} ${spaceGrotesk.variable} font-inter`}>
+        <ClientLayout>
         <Navigation />
         <main className="min-h-screen">
           {children}
         </main>
         <Footer />
+        </ClientLayout>
       </body>
     </html>
   )

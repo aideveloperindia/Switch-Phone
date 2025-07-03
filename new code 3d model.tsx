@@ -251,10 +251,84 @@ function SwitchPhoneDevice() {
       >
         <meshStandardMaterial 
           color="#ffffff"
-          metalness={0.1}
-          roughness={0.05}
+          metalness={0.6}
+          roughness={0.2}
         />
       </RoundedBox>
+
+      {/* 3D Rings for Icons */}
+      {/* Speaker Ring */}
+      <group position={[-0.75, 0.8, 0.16]}>
+        <mesh>
+          <torusGeometry args={[0.12, 0.01, 16, 32]} />
+          <meshStandardMaterial color="#6610f2" metalness={0.8} roughness={0.2} />
+        </mesh>
+        <mesh>
+          <torusGeometry args={[0.12, 0.01, 16, 32]} rotation={[0, Math.PI / 2, 0]} />
+          <meshStandardMaterial color="#6610f2" metalness={0.8} roughness={0.2} />
+        </mesh>
+      </group>
+
+      {/* Camera Ring */}
+      <group position={[0.75, 0.8, 0.16]}>
+        <mesh>
+          <torusGeometry args={[0.12, 0.01, 16, 32]} />
+          <meshStandardMaterial color="#dc3545" metalness={0.8} roughness={0.2} />
+        </mesh>
+        <mesh>
+          <torusGeometry args={[0.12, 0.01, 16, 32]} rotation={[0, Math.PI / 2, 0]} />
+          <meshStandardMaterial color="#dc3545" metalness={0.8} roughness={0.2} />
+        </mesh>
+      </group>
+
+      {/* Microphone Ring */}
+      <group position={[-1.4, 0.3, 0.16]}>
+        <mesh>
+          <torusGeometry args={[0.12, 0.01, 16, 32]} />
+          <meshStandardMaterial color="#6610f2" metalness={0.8} roughness={0.2} />
+        </mesh>
+        <mesh>
+          <torusGeometry args={[0.12, 0.01, 16, 32]} rotation={[0, Math.PI / 2, 0]} />
+          <meshStandardMaterial color="#6610f2" metalness={0.8} roughness={0.2} />
+        </mesh>
+      </group>
+
+      {/* Sensor Ring */}
+      <group position={[1.4, 0.3, 0.16]}>
+        <mesh>
+          <torusGeometry args={[0.12, 0.01, 16, 32]} />
+          <meshStandardMaterial color="#dc3545" metalness={0.8} roughness={0.2} />
+        </mesh>
+        <mesh>
+          <torusGeometry args={[0.12, 0.01, 16, 32]} rotation={[0, Math.PI / 2, 0]} />
+          <meshStandardMaterial color="#dc3545" metalness={0.8} roughness={0.2} />
+        </mesh>
+      </group>
+
+      {/* Hardware Icons */}
+      {/* Speaker Icon */}
+      <mesh position={[-0.75, 0.8, 0.16]}>
+        <planeGeometry args={[0.15, 0.15]} />
+        <meshBasicMaterial map={speakerTexture} transparent />
+      </mesh>
+
+      {/* Camera Icon */}
+      <mesh position={[0.75, 0.8, 0.16]}>
+        <planeGeometry args={[0.15, 0.15]} />
+        <meshBasicMaterial map={cameraTexture} transparent />
+      </mesh>
+
+      {/* Microphone Icon */}
+      <mesh position={[-1.4, 0.3, 0.16]}>
+        <planeGeometry args={[0.15, 0.15]} />
+        <meshBasicMaterial map={microphoneTexture} transparent />
+      </mesh>
+
+      {/* Pulse Sensor Icon */}
+      <mesh position={[1.4, 0.3, 0.16]}>
+        <planeGeometry args={[0.15, 0.15]} />
+        <meshBasicMaterial map={pulseTexture} transparent />
+      </mesh>
 
       {/* Phone Frame */}
       <RoundedBox
