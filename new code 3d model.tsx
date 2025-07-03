@@ -263,8 +263,8 @@ function SwitchPhoneDevice() {
           <torusGeometry args={[0.12, 0.01, 16, 32]} />
           <meshStandardMaterial color="#6610f2" metalness={0.8} roughness={0.2} />
         </mesh>
-        <mesh>
-          <torusGeometry args={[0.12, 0.01, 16, 32]} rotation={[0, Math.PI / 2, 0]} />
+        <mesh rotation={[0, Math.PI / 2, 0]}>
+          <torusGeometry args={[0.12, 0.01, 16, 32]} />
           <meshStandardMaterial color="#6610f2" metalness={0.8} roughness={0.2} />
         </mesh>
       </group>
@@ -275,8 +275,8 @@ function SwitchPhoneDevice() {
           <torusGeometry args={[0.12, 0.01, 16, 32]} />
           <meshStandardMaterial color="#dc3545" metalness={0.8} roughness={0.2} />
         </mesh>
-        <mesh>
-          <torusGeometry args={[0.12, 0.01, 16, 32]} rotation={[0, Math.PI / 2, 0]} />
+        <mesh rotation={[0, Math.PI / 2, 0]}>
+          <torusGeometry args={[0.12, 0.01, 16, 32]} />
           <meshStandardMaterial color="#dc3545" metalness={0.8} roughness={0.2} />
         </mesh>
       </group>
@@ -287,8 +287,8 @@ function SwitchPhoneDevice() {
           <torusGeometry args={[0.12, 0.01, 16, 32]} />
           <meshStandardMaterial color="#6610f2" metalness={0.8} roughness={0.2} />
         </mesh>
-        <mesh>
-          <torusGeometry args={[0.12, 0.01, 16, 32]} rotation={[0, Math.PI / 2, 0]} />
+        <mesh rotation={[0, Math.PI / 2, 0]}>
+          <torusGeometry args={[0.12, 0.01, 16, 32]} />
           <meshStandardMaterial color="#6610f2" metalness={0.8} roughness={0.2} />
         </mesh>
       </group>
@@ -299,8 +299,8 @@ function SwitchPhoneDevice() {
           <torusGeometry args={[0.12, 0.01, 16, 32]} />
           <meshStandardMaterial color="#dc3545" metalness={0.8} roughness={0.2} />
         </mesh>
-        <mesh>
-          <torusGeometry args={[0.12, 0.01, 16, 32]} rotation={[0, Math.PI / 2, 0]} />
+        <mesh rotation={[0, Math.PI / 2, 0]}>
+          <torusGeometry args={[0.12, 0.01, 16, 32]} />
           <meshStandardMaterial color="#dc3545" metalness={0.8} roughness={0.2} />
         </mesh>
       </group>
