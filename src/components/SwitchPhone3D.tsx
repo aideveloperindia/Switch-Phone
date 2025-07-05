@@ -417,15 +417,15 @@ function SwitchPhoneDevice() {
 
 export default function SwitchPhoneModel() {
   return (
-    <Canvas
-      camera={{ position: [0, 0, 6], fov: 50 }}
-      shadows
-      dpr={[1, 2]}
+      <Canvas
+        camera={{ position: [0, 0, 6], fov: 50 }}
+        shadows
+        dpr={[1, 2]}
       style={{ width: '800px', height: '800px' }}
       className="md:!w-full md:!h-full"
-      gl={{ antialias: true, alpha: false, toneMappingExposure: 0.8 }}
-      scene={{ background: new THREE.Color(0xffffff) }}
-    >
+        gl={{ antialias: true, alpha: false, toneMappingExposure: 0.8 }}
+        scene={{ background: new THREE.Color(0xffffff) }}
+      >
         <ambientLight intensity={1.2} color="#ffffff" />
         <directionalLight 
           position={[5, 8, 5]} 
@@ -464,6 +464,6 @@ export default function SwitchPhoneModel() {
           maxPolarAngle={Math.PI / 2.2}
           minPolarAngle={Math.PI / 4}
         />
-    </Canvas>
+      </Canvas>
   );
 }

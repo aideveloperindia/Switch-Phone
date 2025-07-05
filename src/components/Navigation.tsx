@@ -2,7 +2,9 @@
 
 import React, { useState } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { usePathname } from 'next/navigation'
+import NavigationLogo from '@/components/NavigationLogo'
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
@@ -23,9 +25,16 @@ export default function Navigation() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           <div className="flex items-center">
-            <Link href="/" className="flex-shrink-0 flex items-center">
-              <span className="text-2xl font-bold text-black font-space-grotesk">Switch</span>
-              <span className="text-2xl font-bold text-black font-space-grotesk">-Phone</span>
+            <Link href="/" className="flex-shrink-0 flex items-center space-x-3">
+              {/* Logo Image */}
+              <div className="relative w-10 h-10">
+                <NavigationLogo />
+              </div>
+              {/* Logo Text */}
+              <div className="flex items-center">
+                <span className="text-2xl font-bold text-black font-space-grotesk">Switch</span>
+                <span className="text-2xl font-bold text-red-600 font-space-grotesk">-Phone</span>
+              </div>
             </Link>
           </div>
 
