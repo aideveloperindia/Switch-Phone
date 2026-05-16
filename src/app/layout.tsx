@@ -27,11 +27,10 @@ export const metadata: Metadata = {
   robots: 'index, follow',
   icons: {
     icon: [
-      { url: '/favicon.svg', sizes: 'any', type: 'image/svg+xml' },
-      { url: '/favicon.ico', sizes: '16x16', type: 'image/x-icon' },
+      { url: '/switchphone.png', sizes: '32x32', type: 'image/png' },
     ],
     apple: [
-      { url: '/favicon.svg', sizes: '180x180', type: 'image/svg+xml' },
+      { url: '/switchphone.png', sizes: '180x180', type: 'image/png' },
     ],
   },
   openGraph: {
@@ -63,9 +62,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-        <link rel="alternate icon" href="/favicon.ico" />
-        <link rel="apple-touch-icon" href="/favicon.svg" />
+        <link rel="icon" href="/switchphone.png" type="image/png" />
+        <link rel="apple-touch-icon" href="/switchphone.png" />
         <meta name="theme-color" content="#dc2626" />
         <meta name="msapplication-TileColor" content="#dc2626" />
       </head>
