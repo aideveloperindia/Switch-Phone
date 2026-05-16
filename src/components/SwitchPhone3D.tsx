@@ -1,7 +1,8 @@
 'use client';
 
-import React, { useRef, useState, useEffect } from 'react';
+import React, { Suspense, useRef, useState, useEffect } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
+import { iconMaterialProps, useDeviceIconTextures } from '@/components/deviceIconTextures';
 import { OrbitControls, RoundedBox, Text } from '@react-three/drei';
 import * as THREE from 'three';
 import ScrollingScreen from './ScrollingScreen';
@@ -50,6 +51,7 @@ function ServiceButton({ position, color, label, onClick, isActive }: {
 
 // Main Switch Phone Component
 function SwitchPhoneDevice() {
+  const icons = useDeviceIconTextures();
   const phoneRef = useRef<THREE.Group>(null);
   
   // State for new logic
@@ -344,7 +346,7 @@ function SwitchPhoneDevice() {
       </mesh>
       <mesh position={[-0.75, 0.8, 0.176]}>
         <planeGeometry args={[0.18, 0.18]} />
-        <meshBasicMaterial color="#ffffff" />
+        <meshBasicMaterial {...iconMaterialProps(icons.speaker)} />
       </mesh>
       <mesh position={[-0.75, 0.87, 0.151]}>
         <torusGeometry args={[0.12, 0.02, 16, 32, Math.PI]} />
@@ -362,7 +364,7 @@ function SwitchPhoneDevice() {
       </mesh>
       <mesh position={[0.75, 0.8, 0.176]}>
         <planeGeometry args={[0.18, 0.18]} />
-        <meshBasicMaterial color="#ffffff" />
+        <meshBasicMaterial {...iconMaterialProps(icons.camera)} />
       </mesh>
       <mesh position={[0.75, 0.84, 0.151]} rotation={[0, 0, 0]}>
         <torusGeometry args={[0.12, 0.02, 16, 32, Math.PI]} />
@@ -380,7 +382,7 @@ function SwitchPhoneDevice() {
       </mesh>
       <mesh position={[-1.4, 0.2, 0.176]}>
         <planeGeometry args={[0.18, 0.18]} />
-        <meshBasicMaterial color="#ffffff" />
+        <meshBasicMaterial {...iconMaterialProps(icons.microphone)} />
       </mesh>
       <mesh position={[-1.4, 0.2, 0.151]} rotation={[0, 0, -Math.PI/2]}>
         <torusGeometry args={[0.12, 0.02, 16, 32, Math.PI]} />
@@ -393,7 +395,7 @@ function SwitchPhoneDevice() {
       </mesh>
       <mesh position={[1.4, 0.2, 0.176]}>
         <planeGeometry args={[0.24, 0.24]} />
-        <meshBasicMaterial color="#ffffff" />
+        <meshBasicMaterial {...iconMaterialProps(icons.pulse)} />
       </mesh>
       <mesh position={[1.4, 0.2, 0.151]} rotation={[0, 0, Math.PI/2]}>
         <torusGeometry args={[0.14, 0.02, 16, 32, Math.PI]} />
@@ -448,7 +450,9 @@ export default function SwitchPhoneModel() {
           intensity={1.1}
           color="#ffffff"
         />
-        <SwitchPhoneDevice />
+        <Suspense fallback={null}>
+          <SwitchPhoneDevice />
+        </Suspense>
         <OrbitControls 
           enableZoom={false}
           enablePan={false}

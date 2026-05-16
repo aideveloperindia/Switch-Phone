@@ -1,9 +1,11 @@
 'use client';
 
-import React from 'react';
+import React, { Suspense } from 'react';
 import { RoundedBox, Text } from '@react-three/drei';
+import { iconMaterialProps, useDeviceIconTextures } from '@/components/deviceIconTextures';
 
-export default function StaticSwitchPhone3D() {
+function StaticSwitchPhone3DModel() {
+  const icons = useDeviceIconTextures();
   const services = [
     { id: 'hospital', label: 'Hospital', color: '#D70000', position: [-0.75, 0.2, 0.16] as [number, number, number] },
     { id: 'pharmacy', label: 'Pharmacy', color: '#00A651', position: [-0.375, 0.2, 0.16] as [number, number, number] },
@@ -61,7 +63,7 @@ export default function StaticSwitchPhone3D() {
       </mesh>
       <mesh position={[-0.75, 0.8, 0.176]}>
         <planeGeometry args={[0.18, 0.18]} />
-        <meshBasicMaterial color="#ffffff" />
+        <meshBasicMaterial {...iconMaterialProps(icons.speaker)} />
       </mesh>
       <mesh position={[-0.75, 0.87, 0.151]}>
         <ringGeometry args={[0.11, 0.13, 16, 1, 0, Math.PI]} />
@@ -75,7 +77,7 @@ export default function StaticSwitchPhone3D() {
       </mesh>
       <mesh position={[0.75, 0.8, 0.176]}>
         <planeGeometry args={[0.18, 0.18]} />
-        <meshBasicMaterial color="#ffffff" />
+        <meshBasicMaterial {...iconMaterialProps(icons.camera)} />
       </mesh>
       <mesh position={[0.75, 0.84, 0.151]} rotation={[0, 0, 0]}>
         <ringGeometry args={[0.11, 0.13, 16, 1, 0, Math.PI]} />
@@ -89,7 +91,7 @@ export default function StaticSwitchPhone3D() {
       </mesh>
       <mesh position={[-1.4, 0.2, 0.176]}>
         <planeGeometry args={[0.18, 0.18]} />
-        <meshBasicMaterial color="#ffffff" />
+        <meshBasicMaterial {...iconMaterialProps(icons.microphone)} />
       </mesh>
       <mesh position={[-1.4, 0.2, 0.151]} rotation={[0, 0, -Math.PI/2]}>
         <ringGeometry args={[0.11, 0.13, 16, 1, 0, Math.PI]} />
@@ -103,7 +105,7 @@ export default function StaticSwitchPhone3D() {
       </mesh>
       <mesh position={[1.4, 0.2, 0.176]}>
         <planeGeometry args={[0.18, 0.18]} />
-        <meshBasicMaterial color="#ffffff" />
+        <meshBasicMaterial {...iconMaterialProps(icons.pulse)} />
       </mesh>
       <mesh position={[1.4, 0.2, 0.151]} rotation={[0, 0, Math.PI/2]}>
         <ringGeometry args={[0.11, 0.13, 16, 1, 0, Math.PI]} />
@@ -126,4 +128,12 @@ export default function StaticSwitchPhone3D() {
       </RoundedBox>
     </group>
   );
-} 
+}
+
+export default function StaticSwitchPhone3D() {
+  return (
+    <Suspense fallback={null}>
+      <StaticSwitchPhone3DModel />
+    </Suspense>
+  );
+}
