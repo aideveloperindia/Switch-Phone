@@ -1,0 +1,8 @@
+Main website at /
+3D Demo at /3d-demo
+Contact page at /contact
+How it Works at /how-it-works
+Market page at /market
+Team page at /team
+Use Cases at /use-cases
+Audience page at /audience

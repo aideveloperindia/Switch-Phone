@@ -1,0 +1,346 @@
+# Switch-Phone Mind Tree Structure
+
+## Component Structure
+```tsx
+'use client'
+import React, { useState, useEffect, useRef } from 'react'
+
+// Flow node component for interactive mind map
+const FlowNode = React.forwardRef<HTMLDivElement, { 
+  children: React.ReactNode
+  isVisible: boolean
+  onClick?: () => void
+  className?: string
+  isClickable?: boolean
+  emotion?: string
+  delay?: number
+  isActive?: boolean
+}>(({ 
+  children, 
+  isVisible, 
+  onClick, 
+  className = "", 
+  isClickable = false,
+  emotion = "",
+  delay = 0,
+  isActive = false
+}, ref) => {
+  return (
+    <div 
+      ref={ref}
+      className={`
+        transition-all duration-700 ease-out transform
+        ${isVisible ? 'opacity-100 scale-100 translate-y-0' : 'opacity-0 scale-95 translate-y-4'}
+        ${isClickable ? 'cursor-pointer hover:scale-105' : ''}
+        ${isActive ? 'ring-4 ring-yellow-400 ring-opacity-50' : ''}
+        ${className}
+      `}
+      style={{ transitionDelay: `${delay}ms` }}
+      onClick={onClick}
+    >
+      <div className={`
+        p-4 rounded-xl border-2 shadow-lg text-center font-semibold max-w-[320px] mx-auto
+        ${isClickable ? 'hover:shadow-xl transition-shadow' : ''}
+        ${isActive ? 'border-yellow-400 bg-yellow-50 bg-opacity-10' : ''}
+        ${emotion === 'panic' ? 'bg-red-50 border-red-300 text-red-800' : ''}
+        ${emotion === 'calm' ? 'bg-green-50 border-green-300 text-green-800' : ''}
+        ${emotion === 'neutral' ? 'bg-blue-50 border-blue-300 text-blue-800' : ''}
+        ${emotion === 'confusion' ? 'bg-orange-50 border-orange-300 text-orange-800' : ''}
+        ${emotion === 'hope' ? 'bg-emerald-50 border-emerald-300 text-emerald-800' : ''}
+        ${!emotion && !isActive ? 'bg-gray-50 border-gray-300 text-gray-800' : ''}
+      `}>
+        {children}
+      </div>
+    </div>
+  )
+})
+
+FlowNode.displayName = 'FlowNode'
+
+// Arrow component for connecting nodes
+const Arrow = ({ isVisible, delay = 0 }: { isVisible: boolean, delay?: number }) => (
+  <div 
+    className={`
+      flex justify-center my-4 transition-all duration-500
+      ${isVisible ? 'opacity-100' : 'opacity-0'}
+    `}
+    style={{ transitionDelay: `${delay}ms` }}
+  >
+    <div className="text-3xl text-gray-400">↓</div>
+  </div>
+)
+
+// Connecting line component for mind tree structure
+const ConnectingLine = ({ isVisible, delay = 0 }: { isVisible: boolean, delay?: number }) => (
+  <div 
+    className={`
+      flex justify-center transition-all duration-500
+      ${isVisible ? 'opacity-100' : 'opacity-0'}
+    `}
+    style={{ transitionDelay: `${delay}ms` }}
+  >
+    <div className="w-px h-8 bg-gray-400"></div>
+  </div>
+)
+
+## State Management
+```tsx
+// Traditional flow state
+const [traditionalActiveBranch, setTraditionalActiveBranch] = useState<'contacts' | 'google' | 'ambulance' | null>(null)
+const [traditionalSubSteps, setTraditionalSubSteps] = useState<{[key: string]: number}>({})
+const [traditionalStarted, setTraditionalStarted] = useState(false)
+
+// Switch-phone flow state
+const [switchPhoneActiveBranch, setSwitchPhoneActiveBranch] = useState<'sensor' | 'ambulance' | 'hospital' | null>(null)
+const [switchPhoneSubSteps, setSwitchPhoneSubSteps] = useState<{[key: string]: number}>({})
+const [switchPhoneStarted, setSwitchPhoneStarted] = useState(false)
+
+// Refs for scrolling
+const flowContainerRef = useRef<HTMLDivElement>(null)
+const stepRefs = useRef<{ [key: string]: HTMLDivElement | null }>({})
+```
+
+## Flow Control Functions
+```tsx
+const startTraditionalFlow = () => {
+  setTraditionalStarted(true)
+  setTimeout(() => {
+    const targetEl = stepRefs.current['traditional-choices']
+    if (targetEl) {
+      targetEl.scrollIntoView({
+        behavior: 'smooth',
+        block: 'center'
+      })
+    }
+  }, 400)
+}
+
+const selectTraditionalBranch = (branch: 'contacts' | 'google' | 'ambulance') => {
+  setTraditionalActiveBranch(branch)
+  setTraditionalSubSteps({ [branch]: 1 })
+}
+
+const advanceTraditionalStep = (branch: string) => {
+  setTraditionalSubSteps(prev => ({
+    ...prev,
+    [branch]: (prev[branch] || 0) + 1
+  }))
+}
+
+// Similar functions for Switch-Phone flow
+const startSwitchPhoneFlow = () => {
+  setSwitchPhoneStarted(true)
+  setTimeout(() => {
+    const targetEl = stepRefs.current['switchphone-choices']
+    if (targetEl) {
+      targetEl.scrollIntoView({
+        behavior: 'smooth',
+        block: 'center'
+      })
+    }
+  }, 400)
+}
+
+const selectSwitchPhoneBranch = (branch: 'sensor' | 'ambulance' | 'hospital') => {
+  setSwitchPhoneActiveBranch(branch)
+  setSwitchPhoneSubSteps({ [branch]: 1 })
+}
+
+const advanceSwitchPhoneStep = (branch: string) => {
+  setSwitchPhoneSubSteps(prev => ({
+    ...prev,
+    [branch]: (prev[branch] || 0) + 1
+  }))
+}
+```
+
+## Auto-Scroll Logic
+```tsx
+useEffect(() => {
+  if (traditionalActiveBranch && traditionalSubSteps[traditionalActiveBranch]) {
+    const step = traditionalSubSteps[traditionalActiveBranch]
+    const refKey = `traditional-${traditionalActiveBranch}-${step}`
+    if (stepRefs.current[refKey]) {
+      setTimeout(() => {
+        const targetEl = stepRefs.current[refKey]
+        if (targetEl) {
+          const targetRect = targetEl.getBoundingClientRect()
+          const scrollPosition = window.scrollY + targetRect.top - 200
+          window.scrollTo({
+            top: scrollPosition,
+            behavior: 'smooth'
+          })
+        }
+      }, 400)
+    }
+  }
+}, [traditionalSubSteps])
+
+// Similar effect for Switch-Phone flow
+useEffect(() => {
+  if (switchPhoneActiveBranch && switchPhoneSubSteps[switchPhoneActiveBranch]) {
+    const step = switchPhoneSubSteps[switchPhoneActiveBranch]
+    const refKey = `switchphone-${switchPhoneActiveBranch}-${step}`
+    if (stepRefs.current[refKey]) {
+      setTimeout(() => {
+        const targetEl = stepRefs.current[refKey]
+        if (targetEl) {
+          const targetRect = targetEl.getBoundingClientRect()
+          const scrollPosition = window.scrollY + targetRect.top - 200
+          window.scrollTo({
+            top: scrollPosition,
+            behavior: 'smooth'
+          })
+        }
+      }, 400)
+    }
+  }
+}, [switchPhoneSubSteps])
+```
+
+## Traditional Flow Structure
+```tsx
+{traditionalStarted && (
+  <>
+    <div 
+      ref={(el) => { stepRefs.current['traditional-choices'] = el }}
+      className="bg-gradient-to-br from-slate-900/95 via-blue-900/95 to-indigo-900/95 backdrop-blur-sm py-4 rounded-xl shadow-xl mb-8"
+    >
+      <div className="flex justify-center items-start gap-8 flex-wrap">
+        {/* Contacts Branch */}
+        <div className="flex flex-col items-center">
+          <FlowNode 
+            isVisible={true} 
+            onClick={() => selectTraditionalBranch('contacts')} 
+            isClickable={true} 
+            emotion="confusion"
+            isActive={traditionalActiveBranch === 'contacts'}
+          >
+            📞 Open Contacts
+            <div className="text-sm mt-2">Search for known doctor...</div>
+            {traditionalActiveBranch === 'contacts' && 
+              <div className="text-xs mt-1 text-yellow-400">▶ Active Path</div>
+            }
+          </FlowNode>
+
+          {traditionalActiveBranch === 'contacts' && (
+            <div className="mt-4 space-y-4">
+              {/* Sub-steps for contacts branch */}
+            </div>
+          )}
+        </div>
+
+        {/* Google Branch */}
+        <div className="flex flex-col items-center">
+          <FlowNode 
+            isVisible={true} 
+            onClick={() => selectTraditionalBranch('google')} 
+            isClickable={true} 
+            emotion="confusion"
+            isActive={traditionalActiveBranch === 'google'}
+          >
+            🌐 Open Google
+            <div className="text-sm mt-2">Search nearby hospital...</div>
+            {traditionalActiveBranch === 'google' && 
+              <div className="text-xs mt-1 text-yellow-400">▶ Active Path</div>
+            }
+          </FlowNode>
+
+          {traditionalActiveBranch === 'google' && (
+            <div className="mt-4 space-y-4">
+              {/* Sub-steps for google branch */}
+            </div>
+          )}
+        </div>
+
+        {/* Ambulance Branch */}
+        <div className="flex flex-col items-center">
+          <FlowNode 
+            isVisible={true} 
+            onClick={() => selectTraditionalBranch('ambulance')} 
+            isClickable={true} 
+            emotion="panic"
+            isActive={traditionalActiveBranch === 'ambulance'}
+          >
+            🚑 Dial Ambulance Number
+            <div className="text-sm mt-2">Emergency call...</div>
+            {traditionalActiveBranch === 'ambulance' && 
+              <div className="text-xs mt-1 text-yellow-400">▶ Active Path</div>
+            }
+          </FlowNode>
+
+          {traditionalActiveBranch === 'ambulance' && (
+            <div className="mt-4 space-y-4">
+              {/* Sub-steps for ambulance branch */}
+            </div>
+          )}
+        </div>
+      </div>
+    </div>
+  </>
+)}
+```
+
+## Switch-Phone Flow Structure
+```tsx
+{switchPhoneStarted && (
+  <>
+    <div 
+      ref={(el) => { stepRefs.current['switchphone-choices'] = el }}
+      className="bg-gradient-to-br from-slate-900/95 via-blue-900/95 to-indigo-900/95 backdrop-blur-sm py-4 rounded-xl shadow-xl mb-8"
+    >
+      <div className="flex justify-center items-start gap-8 flex-wrap">
+        {/* Sensor Branch */}
+        <div className="flex flex-col items-center">
+          <FlowNode 
+            isVisible={true} 
+            onClick={() => selectSwitchPhoneBranch('sensor')} 
+            isClickable={true} 
+            emotion="calm"
+            isActive={switchPhoneActiveBranch === 'sensor'}
+          >
+            🔬 Use Sensor
+            <div className="text-sm mt-2">Automatic detection...</div>
+            {switchPhoneActiveBranch === 'sensor' && 
+              <div className="text-xs mt-1 text-yellow-400">▶ Active Path</div>
+            }
+          </FlowNode>
+
+          {switchPhoneActiveBranch === 'sensor' && (
+            <div className="mt-4 space-y-4">
+              {/* Sub-steps for sensor branch */}
+            </div>
+          )}
+        </div>
+
+        {/* Similar structure for Ambulance and Hospital branches */}
+      </div>
+    </div>
+  </>
+)}
+```
+
+## Usage Instructions
+1. Copy all the code sections above into your React/Next.js project
+2. Make sure you have Tailwind CSS configured
+3. The component uses TypeScript, so ensure your project supports it
+4. Import and use the component in your page:
+
+```tsx
+export default function YourPage() {
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 text-white">
+      {/* Your mind tree implementation */}
+    </div>
+  )
+}
+```
+
+## Key Features
+- Interactive mind map with branching paths
+- Smooth animations and transitions
+- Automatic scrolling to active content
+- Emotion-based styling
+- Mobile-responsive design
+- TypeScript support
+- Tailwind CSS styling 

@@ -1,0 +1,203 @@
+🎯 SWITCH-PHONE 3-STAGE INTRO EXPERIENCE PLAN
+==================================================
+
+📋 OVERVIEW:
+Build an immersive 3-stage intro experience for Switch-Phone website using React/Next.js with Three.js.
+Keep /3d-demo untouched as development playground.
+
+🏗️ ARCHITECTURE:
+- / (root) → Video → 3D Model → Enter Website Button
+- /3d-demo → Current demo (UNTOUCHED)
+- /website → Actual website content (redirect current pages here)
+
+---
+
+🧱 STAGE 1: INTRO VIDEO SCREEN
+==============================
+
+DESKTOP VERSION:
+1. Show fullscreen autoplay video as soon as website loads
+2. Use HTML5 <video> element:
+   - Autoplay
+   - Mute by default
+   - No controls
+   - Fullscreen with black background
+3. Video file location: /public/intro.mp4
+4. Optional "Skip Intro" button in corner
+5. When video ends → fade to Stage 2
+
+MOBILE VERSION (Autoplay Restrictions):
+- Show "Tap to Experience" overlay with:
+  - Switch-Phone hero image/animation
+  - Compelling call-to-action
+  - Maybe short GIF preview loop
+- When tapped → plays video with sound
+- Progressive disclosure approach
+
+TECHNICAL:
+- Use localStorage to show video only once per session:
+  localStorage.setItem("introSeen", "true")
+- Detect autoplay capability and adapt accordingly
+- Mobile detection and fallback strategy
+
+---
+
+🧱 STAGE 2: 3D MODEL SHOWCASE
+=============================
+
+DESIGN:
+- Complete blank screen (no navigation, no clutter)
+- 3D Switch-Phone model (separate from /3d-demo)
+- Interactive (rotate, zoom)
+- Single button: "Enter Website" or "Go to Website"
+
+EXPERIENCE:
+- Fade in from video
+- Users can explore the 3D model
+- Focus 100% on Switch-Phone
+- Professional, premium feel
+
+TECHNICAL:
+- Create new 3D component (don't touch existing SwitchPhone3D.tsx)
+- Blank background
+- Optimized for performance
+- Smooth transitions
+
+---
+
+🧱 STAGE 3: WEBSITE ENTRY
+=========================
+
+TRANSITION:
+- Single prominent button
+- Clear call-to-action
+- Redirect to /website (or restructured main site)
+
+PSYCHOLOGY:
+- By this point, user is invested
+- "Enter Website" feels like deliberate choice
+- Creates anticipation for full experience
+
+---
+
+📁 FILE STRUCTURE PLAN:
+=======================
+
+CURRENT (Keep Untouched):
+- /src/app/3d-demo/page.tsx → Development playground
+- /src/components/SwitchPhone3D.tsx → Demo component
+
+NEW FILES TO CREATE:
+- /src/app/page.tsx → 3-stage experience controller
+- /src/components/IntroVideo.tsx → Stage 1 component
+- /src/components/Intro3DModel.tsx → Stage 2 component (new, separate)
+- /src/app/website/page.tsx → Move current content here
+- /public/intro.mp4 → Intro video file
+
+ROUTE CHANGES:
+- / → 3-stage experience
+- /3d-demo → Keep as-is (untouched)
+- /website → Main website content
+- Other pages → Move under /website/ structure
+
+---
+
+🎨 USER EXPERIENCE FLOW:
+========================
+
+1. USER LANDS ON /
+   ↓
+2. VIDEO PLAYS (or tap-to-play on mobile)
+   ↓
+3. FADES TO 3D MODEL on blank screen
+   ↓
+4. USER INTERACTS with 3D model
+   ↓
+5. CLICKS "Enter Website"
+   ↓
+6. REDIRECTS TO /website (full site)
+
+PSYCHOLOGICAL JOURNEY:
+- Hook (video)
+- Wow (3D interaction)
+- Convert (website entry)
+
+---
+
+🔧 TECHNICAL CONSIDERATIONS:
+============================
+
+PERFORMANCE:
+- Lazy load 3D components
+- Optimize video compression
+- Smooth transitions between stages
+- Mobile-responsive design
+
+ACCESSIBILITY:
+- Video captions available
+- Keyboard navigation
+- Screen reader support
+- Skip options for users who need them
+
+BROWSER SUPPORT:
+- Autoplay detection
+- WebGL support checking
+- Graceful fallbacks
+- Cross-browser testing
+
+---
+
+💡 IMPLEMENTATION PRIORITIES:
+=============================
+
+PHASE 1: Basic Structure
+- Set up route structure
+- Create component shells
+- Basic video implementation
+
+PHASE 2: 3D Integration
+- Create separate 3D component
+- Implement transitions
+- Add Enter Website button
+
+PHASE 3: Polish & Mobile
+- Mobile autoplay handling
+- Smooth animations
+- Performance optimization
+- Testing across devices
+
+PHASE 4: Enhancement
+- localStorage handling
+- Analytics integration
+- A/B testing setup
+- Final polish
+
+---
+
+🎯 SUCCESS METRICS:
+==================
+
+USER ENGAGEMENT:
+- Video completion rate
+- 3D interaction time
+- Website entry conversion
+- Bounce rate improvement
+
+TECHNICAL:
+- Load time performance
+- Mobile compatibility
+- Cross-browser functionality
+- Accessibility compliance
+
+---
+
+📝 NOTES:
+=========
+
+- Keep /3d-demo completely untouched for development
+- This creates a premium, Apple-like product reveal experience
+- Progressive disclosure builds user investment
+- Clean separation allows for easy iteration and testing
+- Mobile-first approach ensures broad compatibility
+
+READY FOR IMPLEMENTATION WHEN NEEDED! 🚀 
